@@ -49,3 +49,7 @@ target_link_libraries(draw_polygon_2 PUBLIC CGAL::CGAL_Basic_viewer)
 add_executable(functions ${CGL_TASKS}/functions.cpp ${CGL_SOURCE}/Random.cpp)
 target_include_directories(functions PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(functions PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(startEndSplitMerge ${CGL_TASKS}/startEndSplitMerge.cpp ${CGL_SOURCE}/Random.cpp)
+target_include_directories(startEndSplitMerge PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(startEndSplitMerge PUBLIC CGAL::CGAL_Basic_viewer)
