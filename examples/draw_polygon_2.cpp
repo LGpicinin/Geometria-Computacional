@@ -16,6 +16,8 @@
 #include <stdlib.h>
 #include <vector>
 
+typedef CGL::Polygon2::Vertex_iterator VertexIterator;
+
 
 /**
  * Code example.
@@ -37,6 +39,11 @@ int main()
             P.push_back(CGL::Point2(rng.get_int(),rng.get_int()));
     }
     while (!P.is_simple() || !P.is_counterclockwise_oriented());
+
+    /* Print polygon. */
+    for (VertexIterator vi = P.vertices_begin(); vi != P.vertices_end(); ++vi)
+        std::cout << *vi << std::endl;
+    std::cout << std::endl;
 
     /* Draw points. */
     CGAL::draw(P);

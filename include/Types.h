@@ -14,6 +14,7 @@
 
 #include <CGAL/Simple_cartesian.h>
 #include <CGAL/Polygon_2.h>
+#include <CGAL/Surface_mesh.h>
  
 
 /**
@@ -72,6 +73,12 @@ typedef K::Segment_3 Segment3;
  * 2D Polygon. 
  * */
 typedef CGAL::Polygon_2<K> Polygon2;
+
+/**
+ * @ingroup cgltypes
+ * Polygonal mesh. 
+ * */
+typedef CGAL::Surface_mesh<Point3> Mesh;
 
 }
 

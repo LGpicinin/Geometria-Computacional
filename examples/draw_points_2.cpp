@@ -8,12 +8,14 @@
  * @author Ricardo Dutra da Silva
  */
 
+
 #include <Types.h>
 #include <DrawPoints2.h>
 #include <Random.h>
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
+
 
 /**
  * Code example.
@@ -26,8 +28,8 @@ int main()
     std::vector<CGL::Point2> pts;
 
     /* Create pointss with random endpoints. */
-    int ns = 50;              /* Number of points. */
-    CGL::Random rng(-10, 10); /* "bounding box" for points. "*/
+    int ns = 20; /* Number of points. */
+    CGL::Random rng(-10,10); /* "bounding box" for points. "*/
     for (int i = 1; i <= ns; i++)
     {
         /* Point. */
