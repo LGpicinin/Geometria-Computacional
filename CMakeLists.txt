@@ -69,3 +69,7 @@ target_link_libraries(startEndSplitMerge PUBLIC CGAL::CGAL_Basic_viewer)
 add_executable(polygon_2_triangulate_good ${CGL_TASKS}/polygon_2_triangulate_good.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Partition.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawSegments3.cpp)
 target_include_directories(polygon_2_triangulate_good PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(polygon_2_triangulate_good PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(visible_region ${CGL_TASKS}/visible_region.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Partition.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawSegments3.cpp)
+target_include_directories(visible_region PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(visible_region PUBLIC CGAL::CGAL_Basic_viewer)
