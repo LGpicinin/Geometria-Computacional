@@ -73,3 +73,11 @@ target_link_libraries(polygon_2_triangulate_good PUBLIC CGAL::CGAL_Basic_viewer)
 add_executable(visible_region ${CGL_TASKS}/visible_region.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Partition.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawSegments3.cpp)
 target_include_directories(visible_region PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(visible_region PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(create_points ${CGL_TASKS}/create_points.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp ${CGL_SOURCE}/Random.cpp)
+target_include_directories(create_points PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(create_points PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(fecho_convexo ${CGL_TASKS}/fecho_convexo.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp ${CGL_SOURCE}/Random.cpp)
+target_include_directories(fecho_convexo PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(fecho_convexo PUBLIC CGAL::CGAL_Basic_viewer)
