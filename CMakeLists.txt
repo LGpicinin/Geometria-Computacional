@@ -81,3 +81,7 @@ target_link_libraries(create_points PUBLIC CGAL::CGAL_Basic_viewer)
 add_executable(fecho_convexo ${CGL_TASKS}/fecho_convexo.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp ${CGL_SOURCE}/Random.cpp)
 target_include_directories(fecho_convexo PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(fecho_convexo PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(circle ${CGL_TASKS}/circle.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Primitives.cpp)
+target_include_directories(circle PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(circle PUBLIC CGAL::CGAL_Basic_viewer)
