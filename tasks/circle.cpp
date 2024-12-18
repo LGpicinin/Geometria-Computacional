@@ -9,7 +9,7 @@
 
 float inCircle(CGL::Point3 p1, CGL::Point3 p2, CGL::Point3 p3, CGL::Point3 p4)
 {
-    return ((p1.x() * p2.y() * (std::pow(p3.x(), 2) + std::pow(p3.y(), 2))) + (p4.x() * p1.y() * (std::pow(p2.x(), 2) + std::pow(p2.y(), 2))) + (p3.x() * p4.y() * (std::pow(p1.x(), 2) + std::pow(p1.y(), 2))) + (p2.x() * p3.y() * (std::pow(p4.x(), 2) + std::pow(p4.y(), 2))) - (p4.x() * p3.y() * (std::pow(p2.x(), 2) + std::pow(p2.y(), 2))) - (p3.x() * p2.y() * (std::pow(p1.x(), 2) + std::pow(p1.y(), 2))) - (p2.x() * p1.y() * (std::pow(p4.x(), 2) + std::pow(p4.y(), 2))) - (p1.x() * p4.y() * (std::pow(p3.x(), 2) + std::pow(p3.y(), 2))));
+    return ((p1.x() * p2.y() * (std::pow(p3.x(), 2) + std::pow(p3.y(), 2))) + (p4.x() * p1.y() * (std::pow(p2.x(), 2) + std::pow(p2.y(), 2))) + (p3.x() * p4.y() * (std::pow(p1.x(), 2) + std::pow(p1.y(), 2))) + (p2.x() * p3.y() * (std::pow(p4.x(), 2) + std::pow(p4.y(), 2))) - (p4.x() * p3.y() * (std::pow(p2.x(), 2) + std::pow(p2.y(), 2))) - (p3.x() * p2.y() * (std::pow(p1.x(), 2) + std::pow(p1.y(), 2))) - (p2.x() * p1.y() * (std::pow(p4.x(), 2) + std::pow(p4.y(), 2))) - (p1.x() * p4.y() * (std::pow(p3.x(), 2) + std::pow(p3.y(), 2)))) * -1;
 }
 
 int main(int argc, char *argv[])
