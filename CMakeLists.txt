@@ -6,6 +6,10 @@ project(CGL VERSION 1.0)
 
 # Find required packages.
 find_package(CGAL REQUIRED Qt5)
+find_package( OpenCV REQUIRED )
+
+# Include directories
+include_directories( ${OpenCV_INCLUDE_DIRS})
 
 # Build type for performance.
 set(CMAKE_BUILD_TYPE Release)
@@ -54,34 +58,14 @@ add_executable(polygon_2_create ${CGL_EXAMPLES}/polygon_2_create.cpp ${CGL_SOURC
 target_include_directories(polygon_2_create PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(polygon_2_create PUBLIC CGAL::CGAL_Basic_viewer)
 
-add_executable(draw_triangle ${CGL_TASKS}/draw_triangle.cpp)
-target_include_directories(draw_triangle PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(draw_triangle PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(functions ${CGL_TASKS}/functions.cpp ${CGL_SOURCE}/Random.cpp)
-target_include_directories(functions PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(functions PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(startEndSplitMerge ${CGL_TASKS}/startEndSplitMerge.cpp ${CGL_SOURCE}/Random.cpp)
-target_include_directories(startEndSplitMerge PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(startEndSplitMerge PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(polygon_2_triangulate_good ${CGL_TASKS}/polygon_2_triangulate_good.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Partition.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawSegments3.cpp)
-target_include_directories(polygon_2_triangulate_good PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(polygon_2_triangulate_good PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(visible_region ${CGL_TASKS}/visible_region.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Partition.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawSegments3.cpp)
-target_include_directories(visible_region PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(visible_region PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(create_points ${CGL_TASKS}/create_points.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp ${CGL_SOURCE}/Random.cpp)
-target_include_directories(create_points PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(create_points PUBLIC CGAL::CGAL_Basic_viewer)
-
-add_executable(fecho_convexo ${CGL_TASKS}/fecho_convexo.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp ${CGL_SOURCE}/Random.cpp)
-target_include_directories(fecho_convexo PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
-target_link_libraries(fecho_convexo PUBLIC CGAL::CGAL_Basic_viewer)
-
 add_executable(circle ${CGL_TASKS}/circle.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp)
 target_include_directories(circle PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
 target_link_libraries(circle PUBLIC CGAL::CGAL_Basic_viewer)
+
+add_executable(display_image ${CGL_TASKS}/display_image.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp)
+target_include_directories(display_image PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(display_image PUBLIC ${OpenCV_LIBS} CGAL::CGAL_Basic_viewer)
+
+add_executable(divisao_planar ${CGL_TASKS}/divisao_planar.cpp ${CGL_SOURCE}/IO.cpp ${CGL_SOURCE}/Primitives.cpp ${CGL_DRAW_SOURCE}/DrawPoints2.cpp)
+target_include_directories(divisao_planar PRIVATE ${CGL_INCLUDE} ${CGL_DRAW_INCLUDE})
+target_link_libraries(divisao_planar PUBLIC ${OpenCV_LIBS} CGAL::CGAL_Basic_viewer)
